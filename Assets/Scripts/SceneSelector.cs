@@ -12,7 +12,7 @@ public class SceneSelector : MonoBehaviour
 
     public void toCamera()//go to the camera scene 
     {
-        SceneManager.LoadScene("CameraScene"); 
+        SceneManager.LoadScene("CameraScreen"); 
     }
 
     public void toPostPicture()//after the picture was taken go to the post picture screen
