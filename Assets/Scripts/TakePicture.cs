@@ -2,19 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events; 
 using TMPro;
 
 public class TakePicture : MonoBehaviour
 {
     public Image photo;
-    private Rect rectObj = new Rect(0,0, 100f, 200);
+    public UnityEvent screenSwitch;
     private Vector2 pivot = new Vector2(0, 0);
+    Sprite mySprite;
+   
 
     public void captureImage()
     {
-        Debug.Log("Captured");
+        screenSwitch?.Invoke(); 
         var texture = ScreenCapture.CaptureScreenshotAsTexture();
-        Sprite mySprite = Sprite.Create(texture,rectObj, pivot);
+        if (mySprite == null)
+        {
+            mySprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), pivot);
+        }
+        else
+        {
+            mySprite = null;
+            mySprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), pivot);
+        }
         photo.sprite = mySprite;
     }
 }

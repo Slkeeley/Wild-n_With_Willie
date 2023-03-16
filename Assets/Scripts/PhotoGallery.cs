@@ -21,7 +21,7 @@ public class PhotoGallery : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         photoIndex++;
-        if (photoIndex > photos.Length) photoIndex = 0; 
+        if (photoIndex >= photos.Length) photoIndex = 0; 
         currPhoto.sprite = photos[photoIndex]; 
         StartCoroutine(changePhoto());
     }
