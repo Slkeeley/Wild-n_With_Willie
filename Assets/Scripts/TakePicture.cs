@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO; 
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events; 
@@ -27,5 +28,13 @@ public class TakePicture : MonoBehaviour
             mySprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), pivot);
         }
         photo.sprite = mySprite;
+        saveSprite(); 
+    }
+
+    void saveSprite()
+    {
+        Texture2D photoSaved = mySprite.texture;
+        byte[] bytes = photoSaved.EncodeToPNG();
+        File.WriteAllBytes(Application.persistentDataPath+"Wild'n", bytes); 
     }
 }
