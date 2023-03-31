@@ -39,7 +39,7 @@ public class TakePicture : MonoBehaviour
     }
 
 
-    void saveSprite()
+    public void saveSprite()
     {
         Texture2D photoSaved = mySprite.texture;
         byte[] bytes = photoSaved.EncodeToPNG();
