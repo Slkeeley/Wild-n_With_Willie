@@ -1679,7 +1679,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090882573}
         m_TargetAssemblyTypeName: screenSwitch, Assembly-CSharp
-        m_MethodName: switchScreens
+        m_MethodName: hideObjs
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2211,7 +2211,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2090882573}
         m_TargetAssemblyTypeName: screenSwitch, Assembly-CSharp
-        m_MethodName: switchScreens
+        m_MethodName: backToCameraScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

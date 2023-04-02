@@ -15,19 +15,17 @@ public class screenSwitch : MonoBehaviour
         if (!uiObjs.activeInHierarchy) uiObjs.SetActive(true); 
     }
 
-    public void switchScreens()
+    public void hideObjs()
     {
-        if(uiObjs.activeInHierarchy)
-        {
-            Debug.Log("setting UI objs to not be ative"); 
             uiObjs.SetActive(false);
             postPictureObjs.SetActive(true); 
-        }
-        else
-        {
+       
+    }
+
+    public void backToCameraScreen()
+    {
             postPictureObjs.SetActive(false);
-            uiObjs.SetActive(true); 
-        }
+            uiObjs.SetActive(true);
     }
 
 }

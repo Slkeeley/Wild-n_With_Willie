@@ -17,14 +17,6 @@ public class TakePicture : MonoBehaviour
     public void takePhoto()
     {
         screenSwitch?.Invoke();
-        StartCoroutine(captureImage());
-        
-    }
-
-
-    IEnumerator captureImage()//wait for a tenth of a second for the UI elements to disappear before taking the photo
-    {
-        yield return new WaitForSeconds(.1f);
         var texture = ScreenCapture.CaptureScreenshotAsTexture();
         if (mySprite == null)
         {
@@ -36,7 +28,9 @@ public class TakePicture : MonoBehaviour
             mySprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), pivot);
         }
         photo.sprite = mySprite;
+
     }
+
 
 
     public void saveSprite()
