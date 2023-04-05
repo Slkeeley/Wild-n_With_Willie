@@ -135,14 +135,13 @@ GameObject:
   - component: {fileID: 71230953}
   - component: {fileID: 71230952}
   - component: {fileID: 71230951}
-  - component: {fileID: 71230954}
   m_Layer: 5
   m_Name: Share
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &71230950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -161,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 200, y: -100}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &71230951
@@ -208,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 71230954}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneSelector, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -258,22 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71230949}
   m_CullTransparentMesh: 1
---- !u!114 &71230954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71230949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a062e02bd6e89434298e2dd1d4e654a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  photo: {fileID: 269500572}
-  screenSwitch:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &125410527
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +339,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 125410530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &125410530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,7 +915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &612641989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1392,7 +1387,7 @@ PrefabInstance:
     - target: {fileID: 8297056788253150762, guid: 98c57c60d5f37d34cb0d009317bd15af,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8297056788253150762, guid: 98c57c60d5f37d34cb0d009317bd15af,
         type: 3}
@@ -1482,7 +1477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1074943070
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1735,7 +1730,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1338179107}
         m_TargetAssemblyTypeName: TakePicture, Assembly-CSharp
-        m_MethodName: captureImage
+        m_MethodName: takePhoto
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2102,7 +2097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1760127862
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2355,7 +2350,7 @@ RectTransform:
   - {fileID: 1760127862}
   - {fileID: 1593093565}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
