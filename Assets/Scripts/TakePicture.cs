@@ -11,17 +11,18 @@ public class TakePicture : MonoBehaviour
     public Image photo;
     public UnityEvent screenSwitch; 
     private Vector2 pivot = new Vector2(0, 0);
-    Sprite mySprite;
+    public Sprite mySprite;
    
 
     public void takePhoto()
     {
         screenSwitch?.Invoke();
-        captureImage();      
+        captureImage();
+    
     }
 
 
-    void captureImage() //wait for a tenth of a second for the UI elements to disappear before taking the photo
+    public void captureImage() //wait for a tenth of a second for the UI elements to disappear before taking the photo
     {     
         var texture = ScreenCapture.CaptureScreenshotAsTexture();
         if (mySprite == null)
@@ -34,22 +35,32 @@ public class TakePicture : MonoBehaviour
             mySprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), pivot);
         }
         photo.sprite = mySprite;
-        saveSprite();
+     //   saveSprite();
     }
 
 
     public void saveSprite()
     {
-        Texture2D photoSaved = mySprite.texture;
-        byte[] bytes = photoSaved.EncodeToPNG();
-        NativeGallery.SaveImageToGallery(bytes, "DCIM/album/filename", "Wild'n.jpg");
+        if (mySprite != null)
+        {
+            Texture2D photoSaved = mySprite.texture;
+            byte[] bytes = photoSaved.EncodeToPNG();
+            NativeGallery.SaveImageToGallery(bytes, "DCIM/album/filename", "Wild'n.jpg");
+        }
+        else return; 
     }
 
     public void deleteImage()
     {
-        
-        File.Delete(NativeGallery.GetImageFromGallery(MediaPickCallback callback, string title = "", string mime = "image/*"))
+        if(mySprite!=null)
+        {
+            mySprite = null;
+        }
+        //Debug.Log("Deleting image");
+      //  File.Delete("/storage/emmc/DCIM/album/filename/Wild'n.jpg");
+        //    NativeGallery.GetImageFromGallery(NativeGallery.MediaPickCallback callback, 
+   //    NativeGallery.GetImageFromGallery(callback, string title = "", string mime = "image/*"));
         //bring up are you sure menu in the futre
-        screenSwitch?.Invoke();
+       // screenSwitch?.Invoke();
     }
 }

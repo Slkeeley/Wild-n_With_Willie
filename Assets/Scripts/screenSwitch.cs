@@ -1,31 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events; 
+using UnityEngine.Events;
+using UnityEngine.UI; 
 
 public class screenSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject uiObjs;
+    
+    public GameObject[] uiObjs;
+    public GameObject screenButtons;
     public GameObject postPictureObjs;
+   [SerializeField] private TakePicture PhoneCamera; 
 
     private void Start()
     {
         postPictureObjs.SetActive(false);
-        if (!uiObjs.activeInHierarchy) uiObjs.SetActive(true); 
+        if (!screenButtons.activeInHierarchy) screenButtons.SetActive(true); 
     }
 
     public void hideObjs()
     {
-            uiObjs.SetActive(false);
-            postPictureObjs.SetActive(true); 
+    
+        foreach (GameObject i in uiObjs)
+        {
+            i.GetComponent<Image>().color = new Color(255, 255, 255, 0.0f);
+        }
+        PhoneCamera.captureImage(); 
+        StartCoroutine(showPostPicture());
        
     }
 
     public void backToCameraScreen()
     {
-            postPictureObjs.SetActive(false);
-            uiObjs.SetActive(true);
+        if (PhoneCamera.mySprite != null)
+        {
+            PhoneCamera.saveSprite(); 
+        }
+            foreach (GameObject i in uiObjs)
+        {
+            i.GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
+
+        postPictureObjs.SetActive(false);
+            
     }
 
+    IEnumerator showPostPicture()
+    {
+        yield return new WaitForSeconds(.2f);
+        postPictureObjs.SetActive(true);
+    }
 }
