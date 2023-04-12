@@ -56,6 +56,7 @@ public class TakePicture : MonoBehaviour
         {
             mySprite = null;
         }
+
         //Debug.Log("Deleting image");
       //  File.Delete("/storage/emmc/DCIM/album/filename/Wild'n.jpg");
         //    NativeGallery.GetImageFromGallery(NativeGallery.MediaPickCallback callback, 
