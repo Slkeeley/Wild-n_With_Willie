@@ -59,29 +59,67 @@ public class PlaceOnPlane : MonoBehaviour
         return false;
     }
 
+        void Update()
+        {
+            if (!TryGetTouchPosition(out Vector2 touchPosition))
+                return;
+
+            if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
+            {
+                // Raycast hits are sorted by distance, so the first one
+                // will be the closest hit.
+                var hitPose = s_Hits[0].pose;
+
+                if (spawnedObject == null)
+                {
+                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+
+                }
+                else
+                {
+                    spawnedObject.transform.position = hitPose.position;
+                }
+                placementUpdate.Invoke();
+            }
+        }  
+      
+        /*
     void Update()
     {
         if (!TryGetTouchPosition(out Vector2 touchPosition))
             return;
+        Touch touch = Input.GetTouch(0);
 
-        if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
+
+        if (touch.phase == TouchPhase.Began)
         {
-            // Raycast hits are sorted by distance, so the first one
-            // will be the closest hit.
-            var hitPose = s_Hits[0].pose;
-
-            if (spawnedObject == null)
+            var tp= touch.position;
+            bool isOverUI = tp.IsPointOverUIObject(); 
+            if(isOverUI)
             {
-                spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                Debug.Log()
+            }
 
-            }
-            else
+            if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
             {
-                spawnedObject.transform.position = hitPose.position;
+                // Raycast hits are sorted by distance, so the first one
+                // will be the closest hit.
+                var hitPose = s_Hits[0].pose;
+
+                if (spawnedObject == null)
+                {
+                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+
+                }
+                else
+                {
+                    spawnedObject.transform.position = hitPose.position;
+                }
+                placementUpdate.Invoke();
             }
-            placementUpdate.Invoke();
         }
     }
+    */
 
     public void DiableVisual()
     {
