@@ -58,7 +58,7 @@ public class PlaceOnPlane : MonoBehaviour
         touchPosition = default;
         return false;
     }
-
+    /*
         void Update()
         {
             if (!TryGetTouchPosition(out Vector2 touchPosition))
@@ -83,7 +83,7 @@ public class PlaceOnPlane : MonoBehaviour
             }
         }  
       
-        /*
+        */
     void Update()
     {
         if (!TryGetTouchPosition(out Vector2 touchPosition))
@@ -97,7 +97,7 @@ public class PlaceOnPlane : MonoBehaviour
             bool isOverUI = tp.IsPointOverUIObject(); 
             if(isOverUI)
             {
-                Debug.Log()
+                return; 
             }
 
             if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
@@ -119,7 +119,7 @@ public class PlaceOnPlane : MonoBehaviour
             }
         }
     }
-    */
+    
 
     public void DiableVisual()
     {
