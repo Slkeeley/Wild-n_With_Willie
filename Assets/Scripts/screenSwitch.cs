@@ -41,6 +41,7 @@ public class screenSwitch : MonoBehaviour
             i.GetComponent<Image>().color = new Color(255, 255, 255, 255);
         }
 
+        PhoneCamera.photo.enabled = true; 
         postPictureObjs.SetActive(false);
             
     }

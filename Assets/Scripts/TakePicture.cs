@@ -50,18 +50,19 @@ public class TakePicture : MonoBehaviour
         else return; 
     }
 
+    public void deleteSubMenu()
+    {
+
+    }
     public void deleteImage()
     {
         if(mySprite!=null)
         {
-            mySprite = null;
+            photo.sprite = null;
+            photo.enabled = false; 
         }
 
-        //Debug.Log("Deleting image");
-      //  File.Delete("/storage/emmc/DCIM/album/filename/Wild'n.jpg");
-        //    NativeGallery.GetImageFromGallery(NativeGallery.MediaPickCallback callback, 
-   //    NativeGallery.GetImageFromGallery(callback, string title = "", string mime = "image/*"));
-        //bring up are you sure menu in the futre
-       // screenSwitch?.Invoke();
     }
+
+   
 }
