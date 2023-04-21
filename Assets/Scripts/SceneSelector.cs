@@ -22,6 +22,7 @@ public class SceneSelector : MonoBehaviour
 
     public void closeApp()//if a user would like to exit the app from the camera screen use this
     {
+        Debug.Log("Attempting to Quit"); 
         Application.Quit(); 
     }
 
