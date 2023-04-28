@@ -36,9 +36,10 @@ public class PlaceOnPlane : MonoBehaviour
     /// The object instantiated as a result of a successful raycast intersection with a plane.
     /// </summary>
     public GameObject spawnedObject { get; private set; }
-
+    private float zRotationVal; 
     void Awake()
     {
+        zRotationVal = 0; 
         m_RaycastManager = GetComponent<ARRaycastManager>();
 
         if (placementUpdate == null)
@@ -100,9 +101,18 @@ public class PlaceOnPlane : MonoBehaviour
         }
     }
     
-    public void rotateObj()
+    public void rotateObjRight()
     {
+        Debug.Log("Right");
+        zRotationVal = zRotationVal + 15; 
+        spawnedObject.transform.rotation = Quaternion.Euler(-90, 0, zRotationVal);
+    }
 
+    public void rotateObjLeft()
+    {
+        Debug.Log("Left");
+        zRotationVal = zRotationVal - 15; 
+        spawnedObject.transform.rotation = Quaternion.Euler(-90, 0, zRotationVal);
     }
 
     public void DiableVisual()
