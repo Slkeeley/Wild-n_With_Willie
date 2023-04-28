@@ -12,6 +12,7 @@ public class PhotoGallery : MonoBehaviour
     public Image nextPhoto;
     private int photoIndex; 
     public Sprite[] photos;
+    public float fadeDelay; 
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +71,7 @@ public class PhotoGallery : MonoBehaviour
     IEnumerator fadeOut()
     {
         // loop over 1 second backwards
-        for (float i = 1.5f; i >= 0; i -= Time.deltaTime)
+        for (float i = fadeDelay; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
             currPhoto.color = new Color(1, 1, 1, i);
@@ -81,7 +82,7 @@ public class PhotoGallery : MonoBehaviour
 
     IEnumerator fadeIn()
     {
-        for (float i = 0; i <= 1.5f; i += Time.deltaTime)
+        for (float i = 0; i <= fadeDelay; i += Time.deltaTime)
         {
             // set color with i as alpha
             nextPhoto.color = new Color(1, 1, 1, i);

@@ -1341,10 +1341,13 @@ MonoBehaviour:
   currPhoto: {fileID: 0}
   nextPhoto: {fileID: 0}
   photos:
-  - {fileID: 21300000, guid: eeb4fd993b9c67b459932fd66b41cac3, type: 3}
-  - {fileID: 21300000, guid: 0787583dfe8b718458e85156cf02e951, type: 3}
-  - {fileID: 21300000, guid: 7fbbcb68c73620a4ba841728f64605c6, type: 3}
-  - {fileID: 21300000, guid: d636079175dee424584942f4d9cc69ff, type: 3}
+  - {fileID: 21300000, guid: bfbdf295f4d673d4ca444f7c7aa5aec6, type: 3}
+  - {fileID: 21300000, guid: af8070f34fba8824bbb40ca7ca9808bc, type: 3}
+  - {fileID: 21300000, guid: d24c20b31fea3ef4c8cf521bd3fc96c8, type: 3}
+  - {fileID: 21300000, guid: 7d71b1a623fc4d2478634d69797071e7, type: 3}
+  - {fileID: 21300000, guid: 031b1ad12128b954f84d7220d1a30cfd, type: 3}
+  - {fileID: 21300000, guid: 857ee7e2a178c5e40bb92a124e929966, type: 3}
+  fadeDelay: 2.5
 --- !u!1001 &6627171942464294480
 PrefabInstance:
   m_ObjectHideFlags: 0

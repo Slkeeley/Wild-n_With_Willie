@@ -45,6 +45,10 @@ public class PlaceOnPlane : MonoBehaviour
             placementUpdate = new UnityEvent();
 
         placementUpdate.AddListener(DiableVisual);
+        spawnedObject = Instantiate(m_PlacedPrefab, transform.position, Quaternion.identity);
+        spawnedObject.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        spawnedObject.SetActive(true); 
+
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
@@ -58,32 +62,7 @@ public class PlaceOnPlane : MonoBehaviour
         touchPosition = default;
         return false;
     }
-    /*
-        void Update()
-        {
-            if (!TryGetTouchPosition(out Vector2 touchPosition))
-                return;
 
-            if (m_RaycastManager.Raycast(touchPosition, s_Hits, TrackableType.PlaneWithinPolygon))
-            {
-                // Raycast hits are sorted by distance, so the first one
-                // will be the closest hit.
-                var hitPose = s_Hits[0].pose;
-
-                if (spawnedObject == null)
-                {
-                    spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
-
-                }
-                else
-                {
-                    spawnedObject.transform.position = hitPose.position;
-                }
-                placementUpdate.Invoke();
-            }
-        }  
-      
-        */
     void Update()
     {
         if (!TryGetTouchPosition(out Vector2 touchPosition))
@@ -109,10 +88,11 @@ public class PlaceOnPlane : MonoBehaviour
                 if (spawnedObject == null)
                 {
                     spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
-
+                    spawnedObject.transform.rotation = Quaternion.Euler(0, 0, 0); 
                 }
                 else
                 {
+                    spawnedObject.SetActive(true); 
                     spawnedObject.transform.position = hitPose.position;
                 }
                 placementUpdate.Invoke();
@@ -120,6 +100,10 @@ public class PlaceOnPlane : MonoBehaviour
         }
     }
     
+    public void rotateObj()
+    {
+
+    }
 
     public void DiableVisual()
     {
