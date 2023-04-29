@@ -700,6 +700,24 @@ MonoBehaviour:
   m_PlanePrefab: {fileID: 4376811033750895175, guid: 953831b69e402234d8f46c7dea6f8630,
     type: 3}
   m_DetectionMode: -1
+--- !u!1 &1742415133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7343743200383135025, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6900135752262360031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1742415135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742415133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6499c2895a43a4f4ba62e73d2d303da7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6900135752262360031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -707,6 +725,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2114130520627652176, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1742415135}
+    - target: {fileID: 2114130520627652176, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: toInstructions
+      objectReference: {fileID: 0}
     - target: {fileID: 6900135750175706578, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: planeManager
@@ -827,11 +855,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: App_UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6900135750682457699, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6900135751650260761, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 969184049}
+    - target: {fileID: 6900135751650260763, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6900135751837014781, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -847,5 +885,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1659859600}
+    - target: {fileID: 7343743200383135025, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+        type: 3}
+      propertyPath: m_Name
+      value: Instructions
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa4dd2b1fa842e4b9669ac96c348bbb, type: 3}
