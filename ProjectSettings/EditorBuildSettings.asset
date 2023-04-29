@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CameraScreen.unity
     guid: 6bdce89659816455b9f906fc62d19910
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PostPictureScreen.unity
     guid: cd89c9c391cc53544b1d2a413fb147a8
   m_configObjects:

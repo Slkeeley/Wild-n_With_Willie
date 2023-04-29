@@ -10,10 +10,16 @@ public class TakePicture : MonoBehaviour
 {
     public Image photo;
     public GameObject photoBorder;
+    public GameObject subMenu;
     [SerializeField] private screenSwitch ss; 
     private Vector2 pivot = new Vector2(0, 0);
     public Sprite mySprite;
-    
+
+    private void Awake()
+    {
+        subMenu.SetActive(false); 
+    }
+
     public void captureImage() //wait for a tenth of a second for the UI elements to disappear before taking the photo
     {
 
@@ -42,9 +48,14 @@ public class TakePicture : MonoBehaviour
         else return; 
     }
 
-    public void deleteSubMenu()
+    public void hideSubMenu()
     {
+        subMenu.SetActive(false); 
+    }
 
+    public void showSubMenu()
+    {
+        subMenu.SetActive(true); 
     }
     public void deleteImage()
     {
@@ -53,7 +64,8 @@ public class TakePicture : MonoBehaviour
             photo.sprite = null;
             photo.enabled = false; 
         }
-        photoBorder.SetActive(false); 
+        photoBorder.SetActive(false);
+        hideSubMenu(); 
 
     }
 
