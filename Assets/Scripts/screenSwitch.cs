@@ -65,6 +65,10 @@ public class screenSwitch : MonoBehaviour
         planeManager.SetTrackablesActive(false);
         PhoneCamera.captureImage(); 
         postPictureObjs.SetActive(true);
+        if(!PhoneCamera.photoBorder.activeInHierarchy)
+        {
+            PhoneCamera.photoBorder.SetActive(true); 
+        }
 
     }
 }

@@ -9,10 +9,11 @@ using TMPro;
 public class TakePicture : MonoBehaviour
 {
     public Image photo;
+    public GameObject photoBorder;
     [SerializeField] private screenSwitch ss; 
     private Vector2 pivot = new Vector2(0, 0);
     public Sprite mySprite;
-   
+    
     public void captureImage() //wait for a tenth of a second for the UI elements to disappear before taking the photo
     {
 
@@ -52,6 +53,7 @@ public class TakePicture : MonoBehaviour
             photo.sprite = null;
             photo.enabled = false; 
         }
+        photoBorder.SetActive(false); 
 
     }
 
