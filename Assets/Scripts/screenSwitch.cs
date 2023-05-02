@@ -51,7 +51,16 @@ public class screenSwitch : MonoBehaviour
 
         PhoneCamera.photo.enabled = true; 
         postPictureObjs.SetActive(false);
+        SetActiveAllPlanes(true); 
             
+    }
+
+    public void SetActiveAllPlanes(bool value)
+    {
+        foreach (var planes in planeManager.trackables)
+        {
+            planes.gameObject.SetActive(value); 
+        }
     }
 
     public void showPostPicture()
@@ -60,9 +69,9 @@ public class screenSwitch : MonoBehaviour
     }
     IEnumerator showPostPictureCR()
     {
-       //EFFECTS HERE 
+        //EFFECTS HERE 
+        SetActiveAllPlanes(false); 
         yield return new WaitForSeconds(.2f);
-        planeManager.SetTrackablesActive(false);
         PhoneCamera.captureImage(); 
         postPictureObjs.SetActive(true);
         if(!PhoneCamera.photoBorder.activeInHierarchy)

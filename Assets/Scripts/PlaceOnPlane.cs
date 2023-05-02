@@ -48,7 +48,7 @@ public class PlaceOnPlane : MonoBehaviour
         placementUpdate.AddListener(DiableVisual);
         spawnedObject = Instantiate(m_PlacedPrefab, transform.position, Quaternion.identity);
         spawnedObject.transform.rotation = Quaternion.Euler(-90, 0, 0);
-        spawnedObject.SetActive(true); 
+        spawnedObject.SetActive(false); 
 
     }
 
