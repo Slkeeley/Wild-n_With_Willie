@@ -55,7 +55,7 @@ public class TakePicture : MonoBehaviour
 
     public void showSubMenu()
     {
-        subMenu.SetActive(true); 
+      if(photo.sprite!=null) subMenu.SetActive(true); 
     }
     public void deleteImage()
     {

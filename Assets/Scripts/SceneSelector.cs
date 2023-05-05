@@ -15,9 +15,9 @@ public class SceneSelector : MonoBehaviour
         SceneManager.LoadScene("CameraScreen"); 
     }
 
-    public void toPostPicture()//after the picture was taken go to the post picture screen
+    public void toInfo()//after the picture was taken go to the post picture screen
     {
-        SceneManager.LoadScene("PostPictureScreen"); 
+        SceneManager.LoadScene("InfoScreen"); 
     }
 
     public void closeApp()//if a user would like to exit the app from the camera screen use this
@@ -26,12 +26,9 @@ public class SceneSelector : MonoBehaviour
         Application.Quit(); 
     }
 
-    private void Update()//use this to simulate taking a photo for debugging purposes. 
+    public void toWelcomeScreen()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            SceneManager.LoadScene("PostPictureScreen");
-        }
+        SceneManager.LoadScene("WelcomeScreen"); 
     }
         
   }
