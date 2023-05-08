@@ -40,10 +40,10 @@ public class screenSwitch : MonoBehaviour
 
     public void backToCameraScreen()
     {
-        if (PhoneCamera.mySprite != null)
+     /*   if (PhoneCamera.mySprite != null)
         {
             PhoneCamera.saveSprite(); 
-        }
+        }*/
             foreach (GameObject i in uiObjs)
         {
             i.GetComponent<Image>().color = new Color(255, 255, 255, 255);

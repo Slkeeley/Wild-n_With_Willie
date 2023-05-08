@@ -14,10 +14,12 @@ public class TakePicture : MonoBehaviour
     [SerializeField] private screenSwitch ss; 
     private Vector2 pivot = new Vector2(0, 0);
     public Sprite mySprite;
+    public TMP_Text savedFeedback; 
 
     private void Awake()
     {
-        subMenu.SetActive(false); 
+        subMenu.SetActive(false);
+        savedFeedback.text = "";
     }
 
     public void captureImage() //wait for a tenth of a second for the UI elements to disappear before taking the photo
@@ -44,10 +46,15 @@ public class TakePicture : MonoBehaviour
             Texture2D photoSaved = mySprite.texture;
             byte[] bytes = photoSaved.EncodeToPNG();
             NativeGallery.SaveImageToGallery(bytes, "DCIM/album/filename", "Wild'n.jpg");
+            StartCoroutine(textFeedback());
         }
         else return; 
     }
 
+    public void shareSprite()
+    {
+        Debug.Log("sharing"); 
+    }
     public void hideSubMenu()
     {
         subMenu.SetActive(false); 
@@ -69,5 +76,11 @@ public class TakePicture : MonoBehaviour
 
     }
 
+    IEnumerator textFeedback()
+    {
+        savedFeedback.text = "Image Saved!";
+        yield return new WaitForSeconds(2);
+        savedFeedback.text = ""; 
+    }
    
 }
