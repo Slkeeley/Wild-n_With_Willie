@@ -11,6 +11,7 @@ public class TakePicture : MonoBehaviour
     public Image photo;
     public GameObject photoBorder;
     public GameObject subMenu;
+    public GameObject shareMenu;
     [SerializeField] private screenSwitch ss; 
     private Vector2 pivot = new Vector2(0, 0);
     public Sprite mySprite;
@@ -19,6 +20,7 @@ public class TakePicture : MonoBehaviour
     private void Awake()
     {
         subMenu.SetActive(false);
+        shareMenu.SetActive(false);
         savedFeedback.text = "";
     }
 
@@ -51,9 +53,9 @@ public class TakePicture : MonoBehaviour
         else return; 
     }
 
-    public void shareSprite()
+    public void showSpriteMenu()
     {
-        Debug.Log("sharing"); 
+        shareMenu.SetActive(true);
     }
     public void hideSubMenu()
     {
