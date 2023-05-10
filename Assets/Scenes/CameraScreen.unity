@@ -825,7 +825,7 @@ PrefabInstance:
     - target: {fileID: 4431103988068591632, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: shareSprite
+      value: showShareMenu
       objectReference: {fileID: 0}
     - target: {fileID: 4841021424611454335, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
@@ -1146,7 +1146,7 @@ PrefabInstance:
     - target: {fileID: 6900135751187451777, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6900135751187451777, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
@@ -1248,6 +1248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942796422198063794, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7343743200383135025, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}

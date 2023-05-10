@@ -53,16 +53,21 @@ public class TakePicture : MonoBehaviour
         else return; 
     }
 
-    public void showSpriteMenu()
+    public void showShareMenu()//show the sub-menu with the social media icons
     {
         shareMenu.SetActive(true);
     }
-    public void hideSubMenu()
+    public void hideShareMenu()
+    {
+        shareMenu.SetActive(false);
+    }
+
+    public void hideSubMenu()//hide the are you sure menu 
     {
         subMenu.SetActive(false); 
     }
 
-    public void showSubMenu()
+    public void showSubMenu()//show the are you sure menu 
     {
       if(photo.sprite!=null) subMenu.SetActive(true); 
     }

@@ -2095,9 +2095,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6900135750175706577}
         m_TargetAssemblyTypeName: TakePicture, Assembly-CSharp
-        m_MethodName: saveSprite
+        m_MethodName: showShareMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2783,6 +2783,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916453788753364911, guid: f6c619cfc71b4e14b9fab1c2deced644,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6900135750175706577}
+    - target: {fileID: 7916453788753364911, guid: f6c619cfc71b4e14b9fab1c2deced644,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: hideShareMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916453788753364911, guid: f6c619cfc71b4e14b9fab1c2deced644,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TakePicture, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6c619cfc71b4e14b9fab1c2deced644, type: 3}
