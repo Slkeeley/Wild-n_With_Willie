@@ -420,6 +420,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98c57c60d5f37d34cb0d009317bd15af, type: 3}
+--- !u!1 &924125756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6942796422198063794, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6900135752262360031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &924125761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924125756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a1b79f3f1b87e4294389274a43deb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PhoneCamera: {fileID: 6900135752262360032}
 --- !u!114 &969184049 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3901605293723887604, guid: cba5a0b475f5139469c95c19658cd544,
@@ -765,7 +784,7 @@ PrefabInstance:
     - target: {fileID: 569125145503601121, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -249.99998
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 1031136230884914964, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
@@ -775,7 +794,7 @@ PrefabInstance:
     - target: {fileID: 1031136230884914964, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2114130520627652176, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
@@ -826,11 +845,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6900135752262360032}
+      objectReference: {fileID: 924125761}
     - target: {fileID: 4431103988068591632, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: showShareMenu
+      value: clickShare
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431103988068591632, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: socialMediaButtons, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4841021424611454335, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
@@ -1071,7 +1095,7 @@ PrefabInstance:
     - target: {fileID: 6900135750215489645, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 19.999985
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6900135750682457699, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
@@ -1151,7 +1175,7 @@ PrefabInstance:
     - target: {fileID: 6900135751187451777, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 6900135751187451777, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
@@ -1257,7 +1281,7 @@ PrefabInstance:
     - target: {fileID: 6942796422198063794, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7343743200383135025, guid: cfa4dd2b1fa842e4b9669ac96c348bbb,
         type: 3}
