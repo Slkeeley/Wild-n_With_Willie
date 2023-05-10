@@ -16,6 +16,7 @@ public class socialMediaButtons : MonoBehaviour
         yield return new WaitForEndOfFrame();
         if (PhoneCamera.mySprite != null)
         {
+            PhoneCamera.saveSprite(); 
             Texture2D photoToShare = PhoneCamera.mySprite.texture;
          
             string filePath = Path.Combine(Application.temporaryCachePath, "shared img.png");
