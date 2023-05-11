@@ -1040,6 +1040,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7d71b1a623fc4d2478634d69797071e7, type: 3}
   - {fileID: 21300000, guid: 29954ac6b6b42c94aaa0d819a9d1351f, type: 3}
   - {fileID: 21300000, guid: 5073c300917689740b648f1d732c5a27, type: 3}
+  - {fileID: 21300000, guid: fab4090d19e7dfb4f87bfcb445a96f21, type: 3}
   fadeDelay: 2.5
 --- !u!1001 &6627171942464294480
 PrefabInstance:

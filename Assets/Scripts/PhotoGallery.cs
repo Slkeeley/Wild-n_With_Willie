@@ -40,10 +40,10 @@ public class PhotoGallery : MonoBehaviour
     }
     void setNextPhoto()
     {
-        photoIndex++;
-        if (photoIndex >= photos.Length) photoIndex = 0;
-        nextPhoto.sprite = photos[photoIndex];
-        StartCoroutine(changePhoto());
+         photoIndex++;
+         if (photoIndex >= photos.Length) photoIndex = 0;
+         nextPhoto.sprite = photos[photoIndex];
+         StartCoroutine(changePhoto());
     }
     void setCurrPhoto()
     {
