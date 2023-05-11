@@ -70,10 +70,12 @@ public class TakePicture : MonoBehaviour
         if(mySprite!=null)
         {
             photo.sprite = null;
-            photo.enabled = false; 
+            photo.enabled = false;
+            GetComponentInParent<screenSwitch>().playSound(1);
         }
         photoBorder.SetActive(false);
         subMenu.GetComponent<Animator>().SetBool("movingDown", false);
+        
        // hideSubMenu(); 
 
     }

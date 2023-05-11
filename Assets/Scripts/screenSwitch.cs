@@ -14,17 +14,21 @@ public class screenSwitch : MonoBehaviour
     public GameObject postPictureObjs;
     public ARPlaneManager planeManager; 
    [SerializeField] private TakePicture PhoneCamera; 
+   [SerializeField] private AudioClip[] sounds;
+    private AudioSource source; 
 
 
     private void Start()
     {
         postPictureObjs.SetActive(false);
+        source = GetComponent<AudioSource>(); 
         if (!screenButtons.activeInHierarchy) screenButtons.SetActive(true);
        
     }
     public void takePicture()
     {
         hideObjs();
+        playSound(0); 
         StartCoroutine(showPostPictureCR());
     }
 
@@ -62,6 +66,12 @@ public class screenSwitch : MonoBehaviour
         }
     }
 
+    public void playSound(int soundIndex)
+    {
+        Debug.Log("sound");
+        source.PlayOneShot(sounds[soundIndex]);
+    }
+
     public void showPostPicture()
     {
         StartCoroutine(showPostPictureCR());
@@ -77,6 +87,6 @@ public class screenSwitch : MonoBehaviour
         {
             PhoneCamera.photoBorder.SetActive(true); 
         }
-
+        
     }
 }
