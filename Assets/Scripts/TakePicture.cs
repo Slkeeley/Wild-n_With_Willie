@@ -54,12 +54,16 @@ public class TakePicture : MonoBehaviour
 
     public void hideSubMenu()//hide the are you sure menu 
     {
-        subMenu.SetActive(false); 
+        subMenu.GetComponent<Animator>().SetBool("movingDown", false);
     }
 
     public void showSubMenu()//show the are you sure menu 
     {
-      if(photo.sprite!=null) subMenu.SetActive(true); 
+        if (photo.sprite != null)
+        {
+            subMenu.SetActive(true);
+            subMenu.GetComponent<Animator>().SetBool("movingDown", true);
+        }
     }
     public void deleteImage()//remove the image by making it null 
     {
@@ -69,7 +73,8 @@ public class TakePicture : MonoBehaviour
             photo.enabled = false; 
         }
         photoBorder.SetActive(false);
-        hideSubMenu(); 
+        subMenu.GetComponent<Animator>().SetBool("movingDown", false);
+       // hideSubMenu(); 
 
     }
 

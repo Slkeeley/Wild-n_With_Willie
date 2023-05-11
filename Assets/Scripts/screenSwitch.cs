@@ -69,8 +69,8 @@ public class screenSwitch : MonoBehaviour
     IEnumerator showPostPictureCR()
     {
         //EFFECTS HERE 
-        SetActiveAllPlanes(false); 
-        yield return new WaitForSeconds(.2f);
+        SetActiveAllPlanes(false);
+        yield return new WaitForEndOfFrame();
         PhoneCamera.captureImage(); 
         postPictureObjs.SetActive(true);
         if(!PhoneCamera.photoBorder.activeInHierarchy)
