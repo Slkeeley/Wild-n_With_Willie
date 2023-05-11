@@ -33,7 +33,6 @@ public class screenSwitch : MonoBehaviour
         Debug.Log("Starting event"); 
         foreach (GameObject i in uiObjs)
         {
-            Debug.Log("hiding obj"); 
             i.GetComponent<Image>().color = new Color(255, 255, 255, 0.0f);
         }
     }

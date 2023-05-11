@@ -11,7 +11,7 @@ public class TakePicture : MonoBehaviour
     public Image photo;
     public GameObject photoBorder;
     public GameObject subMenu;
-    public GameObject shareMenu;
+    //public GameObject shareMenu;
     [SerializeField] private screenSwitch ss; 
     private Vector2 pivot = new Vector2(0, 0);
     public Sprite mySprite;
@@ -20,7 +20,6 @@ public class TakePicture : MonoBehaviour
     private void Awake()
     {
         subMenu.SetActive(false);
-        shareMenu.SetActive(false);
         savedFeedback.text = "";
     }
 
@@ -48,7 +47,7 @@ public class TakePicture : MonoBehaviour
             Texture2D photoSaved = mySprite.texture;
             byte[] bytes = photoSaved.EncodeToPNG();
             NativeGallery.SaveImageToGallery(bytes, "DCIM/album/filename", "Wild'n.jpg");
-            StartCoroutine(textFeedback());
+            StartCoroutine(textFeedback(2, savedFeedback));
         }
         else return; 
     }
@@ -74,10 +73,15 @@ public class TakePicture : MonoBehaviour
 
     }
 
-    IEnumerator textFeedback()
+    IEnumerator textFeedback(float t, TMP_Text i)
     {
         savedFeedback.text = "Image Saved!";
-        yield return new WaitForSeconds(2);
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
+        while (i.color.a > 0.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
+            yield return null;
+        }
         savedFeedback.text = ""; 
     }
    

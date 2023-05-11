@@ -491,7 +491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Rockin' With Rue
+  m_text: Rockin' With Ru
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e603bf26a3dac1a40b839600cf8ab4c3, type: 2}
   m_sharedMaterial: {fileID: -5621420369799982074, guid: e603bf26a3dac1a40b839600cf8ab4c3,

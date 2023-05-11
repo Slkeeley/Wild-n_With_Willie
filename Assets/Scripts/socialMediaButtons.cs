@@ -24,7 +24,7 @@ public class socialMediaButtons : MonoBehaviour
 
             Destroy(photoToShare);
 
-            new NativeShare().AddFile(filePath).SetSubject("Rockin' With Rue").SetText("#RockinWithRue").Share(); 
+            new NativeShare().AddFile(filePath).SetSubject("Rockin' With Ru").SetText("#RockinWithRu").Share(); 
         }
     }
 
