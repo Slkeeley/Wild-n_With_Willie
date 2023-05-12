@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSelector : MonoBehaviour
 {
+    public GameObject subMenu; 
     public void toInstructions()//go to the instructions screen; 
     {
         SceneManager.LoadScene("InstructionsScreen"); 
@@ -30,7 +31,17 @@ public class SceneSelector : MonoBehaviour
     {
         SceneManager.LoadScene("WelcomeScreen"); 
     }
-        
-  }
+
+    public void hideSubMenu()//hide the are you sure menu 
+    {
+        subMenu.GetComponent<Animator>().SetBool("movingDown", false);
+    }
+
+    public void showSubMenu()//show the are you sure menu 
+    {
+            subMenu.SetActive(true);
+            subMenu.GetComponent<Animator>().SetBool("movingDown", true);
+    }
+}
 
 
